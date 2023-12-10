@@ -1,0 +1,172 @@
+﻿<Window x:Name="Painty"
+        x:Class="Painty_Like.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        MinHeight="500"
+        MinWidth="900"
+        Background="LightGray"
+        Icon="C:\Users\balak\source\repos\Painty\Painty\Peter_Griffin.png"
+        Title="Painty" Height="450" Width="800">
+
+    <Grid>
+        <Border
+            x:Name="ColorPickBorder"
+            HorizontalAlignment="Right"
+            BorderThickness="5"
+            Background="#352F44"
+            Margin="676,0,0,0"
+            BorderBrush="NavajoWhite" Width="224"/>
+        <Border
+            x:Name="ColorPickBorder2"
+            VerticalAlignment="Top"
+            BorderThickness="5"
+            Background="#352F44"
+            BorderBrush="NavajoWhite" Height="46"/>
+        <Border x:Name="ColorPickBorder3" HorizontalAlignment="Right" VerticalAlignment="Bottom" BorderThickness="6" BorderBrush="RosyBrown" Margin="0,0,38,150" Width="144" Height="144"/>
+        <TextBlock
+            x:Name="Title"
+            Background="RosyBrown"
+            
+            FontStyle="Italic"
+            FontWeight="Bold"
+            TextWrapping="Wrap"
+            Text="Alexander's Infamous Painty Sprayer"
+            VerticalAlignment="Top" HorizontalAlignment="Center" Height="21" FontSize="11" Width="196" Margin="0,10,0,0"/>
+        <TextBlock
+            x:Name="SprayD"
+            Foreground="White"
+            TextWrapping="Wrap"
+            Text="Spray Density"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Right"
+            Height="21" Width="115" FontSize="15" Margin="0,0,95,124"/>
+        <TextBlock
+            x:Name="EraseS"
+            TextWrapping="Wrap"
+            Foreground="White"
+            Text="Eraser Size"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Right"
+            Visibility="Collapsed"
+            Height="21" Width="115" FontSize="15" Margin="0,0,95,124"/>
+
+        <TextBlock
+            x:Name="SprayS"
+            TextWrapping="Wrap"
+            Foreground="White"
+            Text="Spray Size"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Right"
+            Height="22" Width="98" FontSize="15" Margin="0,0,112,58"/>
+        <Button
+            x:Name="Import_Image"
+            Content="Import"
+            HorizontalAlignment="Left"
+            Margin="10,14,0,0"
+            VerticalAlignment="Top"
+            Width="75" Click="Import_Image_Click"/>
+        <Button
+            x:Name="Save_New_Image"
+            Content="Save As"
+            HorizontalAlignment="Left"
+            Margin="90,14,0,0"
+            VerticalAlignment="Top"
+            Width="75"
+            Click="Save_New_Image_Click"/>
+        <Button
+            x:Name="Blue"
+            Background="Blue"
+            BorderThickness="2"
+            HorizontalAlignment="Right"
+            Margin="0,0,60,172"
+            VerticalAlignment="Bottom"
+            Width="30"
+            Height="30"
+            Click="set_blue"/>
+        <Button x:Name="Red" Background="Red" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,60,242" VerticalAlignment="Bottom" Width="30" Height="30" Click="set_red"/>
+        <Button x:Name="Green" Background="Green" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,95,172" VerticalAlignment="Bottom" Width="30" Height="30" Click="set_green"/>
+        <Button x:Name="Yellow" Background="Yellow" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,130,242" VerticalAlignment="Bottom" Width="30" Height="30" Click="set_yellow"/>
+        <Button x:Name="Purple" Background="Purple" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,60,207" VerticalAlignment="Bottom" Width="30" Height="30" Click="set_purple"/>
+        <Button x:Name="Brown" Background="SaddleBrown" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,95,207" VerticalAlignment="Bottom" Width="30" Height="30" Click="set_brown"/>
+        <Button x:Name="White" Background="White" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,130,207" VerticalAlignment="Bottom" Width="30" Height="30" Click="set_white"/>
+        <Button x:Name="Black" Background="Black" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,130,172" VerticalAlignment="Bottom" Width="30" Height="30" Click="set_black"/>
+        <Button x:Name="Orange" Background="Orange" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,95,242" VerticalAlignment="Bottom" Width="30" Height="30" Click="set_orange"/>
+
+        <Slider
+            x:Name="Spray_Size"
+            Background="RosyBrown"
+            
+            Maximum="100"
+            Minimum="5"
+            Width="200"
+            Height="32"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Right"
+            Margin="0,0,10,23"
+            TickFrequency="5"
+            TickPlacement="Both" ValueChanged="Spray_Size_ValueChanged"/>
+        <Slider
+            x:Name="Spray_Density"
+            Background="RosyBrown"
+            Maximum="10"
+            Minimum="1"
+            Width="200"
+            Height="32"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Right"
+            Margin="0,0,10,88"
+            TickFrequency="0.5"
+            TickPlacement="Both" ValueChanged="Spray_Density_ValueChanged"/>
+        <Slider
+            x:Name="Eraser_Size"
+            Background="RosyBrown"
+            Maximum="100"
+            Minimum="5"
+            Width="200"
+            Height="32"
+            Visibility="Collapsed"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Right"
+            Margin="0,0,10,88"
+            TickFrequency="5"
+            TickPlacement="Both" ValueChanged="Eraser_Size_ValueChanged"/>
+        <Image
+            x:Name="User_Image"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="354,150,0,0"
+            Width="200"
+            Height="200"/>
+        <Border
+            x:Name="CanvasBorder"
+            BorderThickness="7"
+            Margin="63,71,279,38"
+            BorderBrush="Orange"/>
+
+        <ScrollViewer Margin="73,80,286,46"
+                      x:Name="viewer"
+                      VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Auto"
+                      Background="White"
+                      >
+            <Canvas
+                x:Name="Draw_On_Image"
+                Cursor="Cross"
+                MouseDown="Canvas_MouseDown"
+                MouseUp="Canvas_MouseUp"
+                MouseMove="Canvas_MouseMove"
+                Margin="0,0,0,0"
+                Width="517"
+                Height="332"/>
+        </ScrollViewer>
+        <RadioButton x:Name="Eraser" Foreground="White" Content="Eraser" Margin="0,141,74,0" VerticalAlignment="Top" HorizontalAlignment="Right" Height="44" Width="72" Checked="Eraser_Checked" ></RadioButton>
+        <RadioButton x:Name="Spray" Foreground="White" Content="Spray" IsChecked="True" Margin="0,103,74,0" VerticalAlignment="Top" HorizontalAlignment="Right" Height="38" Width="70" Checked="Spray_Checked"></RadioButton>
+
+
+
+
+    </Grid>
+</Window>
